@@ -8,35 +8,36 @@ def nyc_pigeon_organizer(data)
     end
     end
   end
-
-  hash.each do |k, v|
+  
+    hash.each do |k, v|
     data[:color].each do |t, s|
       s.each do |i|
         if i.to_s == k.to_s
-          v[:color]<<t.to_s
+          v[:color].push(t.to_s)
         end
       end
     end
   end
-
-   hash.each do |k, v|
+  
+    hash.each do |k, v|
     data[:gender].each do |t, s|
       s.each do |i|
         if i.to_s == k.to_s
-          v[:gender]<<t.to_s
+          v[:gender].push(t.to_s)
         end
       end
     end
   end
-
-   hash.each do |k, v|
+  
+  hash.each do |k, v|
     data[:lives].each do |t, s|
       s.each do |i|
         if i.to_s == k.to_s
-          v[:lives]<<t.to_s
+          v[:lives].push(t.to_s)
         end
       end
     end
   end
-  hash
+  
+   hash
 end
