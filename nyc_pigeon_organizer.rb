@@ -10,19 +10,19 @@ def nyc_pigeon_organizer(data)	# takes argument of hash (pigeon_data), iterates 
 
 	# names.each { |name| pigeon_list[name] = cgl_hash }		# iterates through names array, adding each name as a key, each with a cgl_hash
 	
-	data.each do |k, v|
-		v.each do |k1, v1|
-			if pigeon_list[v1] == nil
-				pigeon_list[v1] = {}
+	data.each do |cgl, cgl_hash|
+		# binding.pry
+		cgl_hash.each do |colors_genders_lives_keys, names|
+			names.each do |name|
+				if pigeon_list[name] == nil
+					pigeon_list[name] = {}
+				end
+				pigeon_list[name][cgl] ||= []
+				pigeon_list[name][cgl] << colors_genders_lives_keys.to_s
 			end
-			pigeon_list[v1][:color] ||= []
-			pigeon_list[v1][:color] << data[:color].key(v1)
-			pigeon_list[v1][:gender] ||= []
-			pigeon_list[v1][:gender] << data[:gender].key.v1
-			pigeon_list[v1][:lives] ||= []
-			pigeon_list[v1][:lives] << data[:live].key.v1
+			# binding.pry
 		end	
 	end
 	pigeon_list
-	binding.pry
+	# binding.pry
 end
